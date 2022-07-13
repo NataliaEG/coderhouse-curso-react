@@ -1,0 +1,29 @@
+.Navbar{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+    background: rgb(37,2,119);
+    background: linear-gradient(60deg, rgba(37,2,119,1) 1%, rgba(196,90,255,1) 100%);
+}
+
+.logo-menu {
+    padding: 5%;
+    width: 200px;
+}
+
+ul.pestañas {
+    display: flex;
+    list-style: none;
+}
+
+.pestañas li {
+    padding-right: 20px;
+}
+
+.pestañas li:hover {
+    color: #61dafb;
+    cursor: pointer;
+}
+
+ 
