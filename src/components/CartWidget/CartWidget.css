@@ -1,0 +1,11 @@
+.cart-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+img.cart {
+    padding: 5px;
+    width: 40px;
+}
