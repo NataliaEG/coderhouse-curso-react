@@ -1,0 +1,22 @@
+.imgProduct {
+    width: 30%;
+}
+.nameProduct {
+    color: #525252;
+    font-weight: 600;
+}
+
+.priceProduct {
+    font-weight: 800;
+    color: #6425ad;
+    font-size: 18px;
+}
+
+.detalleProduct {
+    cursor: pointer;
+    color: blueviolet;
+}
+
+.detalleProduct:hover {
+    color: rgb(116, 3, 131);
+}
