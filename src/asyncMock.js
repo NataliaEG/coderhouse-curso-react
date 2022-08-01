@@ -34,3 +34,11 @@ const products = [
             },2000)
         })
     }
+
+    export const getProd = () => {
+        return new Promise((resolve)=>{
+            setTimeout(() => {
+                resolve(products[0])
+            },2000)
+        })
+    }
