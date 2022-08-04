@@ -13,3 +13,5 @@ Una vez en el codigo se pueden ver distintos componnetes:
  3. ItemDetailContainer: es el componente que muestra un detalle de cada producto.
 
  Todos los datos se estan tomanddo desde "asyncMock" que tiene el json de productos y los metodos que los proveen.
+
+ ![Gif del funcionamiento de la tienda](https://github.com/NataliaEG/tiendadeaccesorios-nataliagomez/blob/routing-ecommerce/TiendaEcommerceAppCell.gif)
