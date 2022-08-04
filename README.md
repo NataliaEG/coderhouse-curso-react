@@ -1,70 +1,15 @@
-# Getting Started with Create React App
+Este proyecto corresponde a un ecommerce de accesorios de celulares, donde se brinda por ejemplo auriculares, cargadores, fundas entre otras cosas.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El proyecto esta desarrolllado con React JS y se encuentra en el siguiente repositorio remoto https://github.com/NataliaEG/tiendadeaccesorios-nataliagomez.
 
-## Available Scripts
+Para empezar a usarlo hay que clonarlo de dicho repositorio, luego usar el comando "npm install" para descargar sus dependencias y luego ejecutarlo con "npm start".
 
-In the project directory, you can run:
+Una vez en el codigo se pueden ver distintos componnetes:
 
-### `npm start`
+ 1. NavBar: que permite la navegacion entre las categorias, volver al inicio y un cart.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ 2. ItemListContainer: que lista todos los productos del catalogo con ayuda de los componentes ItemList e Item que le dan un formato.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ 3. ItemDetailContainer: es el componente que muestra un detalle de cada producto.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ Todos los datos se estan tomanddo desde "asyncMock" que tiene el json de productos y los metodos que los proveen.

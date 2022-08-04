@@ -2,37 +2,27 @@ import './ItemDetailProduct.css';
 import { getProd } from '../../asyncMock';
 import { useState,useEffect } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
+import {useParams} from 'react-router-dom';
+
 
 const ItemDetailContainer = (props) => { 
 
     const [product, setProduct] = useState([])
-    const [loading, setLoading] = useState(true)
 
+    const {productId} = useParams()
+
+   
+    useEffect(() => {
+        getProd(productId).then(response => {
+            setProduct(response)
+        })
+    }, [ ])
 
 
     const handleOnAdd = (quantity) => {
         console.log('Cantidad de items agregados', quantity)
     }
-
-    useEffect(() =>{
-        getProd().then(Response => {
-            setProduct(Response) 
-        }).catch(error => {
-            console.log(error)
-        }).finally(()=> {
-            setLoading(false) 
-        })
-    })
-
-     
-
-    if(loading){
-        return <><span className='loader'> </span>
-               <p className='loaderText'>Cargando... </p>
-               </>
-    }
-
-    
+        
 
 
     return( 
