@@ -5,9 +5,10 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 import {useParams} from 'react-router-dom';
 
 
-const ItemDetailContainer = (props) => { 
+const ItemDetailContainer = (addItem) => { 
 
     const [product, setProduct] = useState([])
+    const [loading, setLoading] = useState(true)
 
     const {productId} = useParams()
 
@@ -15,16 +16,21 @@ const ItemDetailContainer = (props) => {
     useEffect(() => {
         getProd(productId).then(response => {
             setProduct(response)
+        }).finally(() => {
+            setLoading(false)
         })
     }, [productId])
 
   
+    if(loading) {
+        return <h1>Cargando...</h1>
+    }
 
 
     return( 
         <>
         <div className='ContenedorDetailProduct'>
-            <ItemDetail {...product}/>
+            <ItemDetail {...product} addItem={addItem}/>
          </div>
          </>
     )

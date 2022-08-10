@@ -9,3 +9,9 @@ img.cart {
     padding: 5px;
     width: 40px;
 }
+
+a.CartWidget {
+    color: white;
+    text-decoration-line: none;
+    font-size: 18px;
+}

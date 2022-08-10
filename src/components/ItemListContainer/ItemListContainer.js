@@ -5,7 +5,7 @@ import ItemList from '../ItemList/ItemList';
 import {useParams} from 'react-router-dom';
 
 
-const ItemListContainer = (props) => { 
+const ItemListContainer = ({ greeting }) => { 
 
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
@@ -36,12 +36,15 @@ const ItemListContainer = (props) => {
                </>
     }
 
-    
+    if(products.length === 0) {
+        return categoryId ? <h1>No hay productos en nuestra categoria {categoryId}</h1> : <h1>No hay productos disponibles</h1>
+    }
+
 
 
     return(
         <>
-        <h1>{props.greeting}</h1>
+        <h1>{`${greeting} ${categoryId || ''}`}</h1>
          <ItemList  products={products}/>
          
         </>
