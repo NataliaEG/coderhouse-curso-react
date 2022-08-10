@@ -14,9 +14,13 @@
 
 .detalleProduct {
     cursor: pointer;
-    color: blueviolet;
+    color: white;
+    background: #571da2;
+    text-decoration-line: none;
+    padding: 5px;
+    border-radius: 5px;
 }
 
-.detalleProduct:hover {
-    color: rgb(116, 3, 131);
+.detalleProduct:hover { 
+    background: rgb(160 88 201);
 }
