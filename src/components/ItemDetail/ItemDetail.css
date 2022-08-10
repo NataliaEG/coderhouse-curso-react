@@ -1,0 +1,46 @@
+.DetailProduct {
+    display: flex;
+    margin-top: 10%;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center; 
+}
+
+.leftProduct {
+    width: 50%;
+}
+
+.rightProduct {
+    width: 50%;
+}
+
+.imgProductDetail {
+    width: 80%;
+}
+
+.detailsProductCousnt {
+    text-align: justify;
+    width: 100%; 
+}
+
+p.detailsProduct {
+    padding: 0% 5% 2% 5%;
+}
+
+.titleDetailsProduct {
+    font-weight: 600;
+    padding: 0% 5%;
+    font-size: 20px;
+}
+
+.nameDetailsProduct {
+    font-weight: 600;
+    font-size: 26px;
+    color: #7e00b3;
+    font-family: fantasy;
+}
+
+.priceDetailsProduct {
+    font-weight: 700;
+    font-size: 26px;
+}
