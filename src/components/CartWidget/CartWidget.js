@@ -10,8 +10,8 @@ const CartWidget = () => {
     const quantity = getQuantity()
 
     return (
-        <Link to='/cart' className="CartWidget"> 
-            <div className='cart-container'>
+        <Link to='/cart' className="CartWidget" disabled={quantity === 0 ? true : null}> 
+            <div className='cart-container' >
                 <img src='images/agregar-carrito.png' alt="cart" className="cart"/>
                 {quantity}
             </div>

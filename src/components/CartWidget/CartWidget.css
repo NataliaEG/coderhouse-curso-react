@@ -15,3 +15,8 @@ a.CartWidget {
     text-decoration-line: none;
     font-size: 18px;
 }
+
+
+a.CartWidget[disabled] {
+  visibility: hidden; 
+}
