@@ -1,8 +1,10 @@
 import './ItemListContainer.css';
-import { getProduct, getProductsByCategory } from '../../asyncMock';
+//import { getProduct, getProductsByCategory } from '../../asyncMock';
 import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import {useParams} from 'react-router-dom';
+import { getDocs, collection, query, where } from 'firebase/firestore';
+import { dbAccesorios } from '../../services/firebase';
 
 
 const ItemListContainer = ({ greeting }) => { 
@@ -14,18 +16,34 @@ const ItemListContainer = ({ greeting }) => {
  
     useEffect(() =>{
 
-        const asynFunction = categoryId ? getProductsByCategory : getProduct 
+        //const asynFunction = categoryId ? getProductsByCategory : getProduct 
 
         
-        asynFunction(categoryId).then(Response => {
-                setProducts(Response) 
-            }).catch(error => {
-                console.log(error)
-            }).finally(()=> {
-                setLoading(false)
-            })
-      
+       // asynFunction(categoryId).then(Response => {
+           //     setProducts(Response) 
+         //   }).catch(error => {
+           //     console.log(error)
+          //  }).finally(()=> {
+           //     setLoading(false)
+          //  })
+        const reffColeccion  = !categoryId
+           ? collection(dbAccesorios,'products')
+           : query(collection(dbAccesorios,'products'), where('category', '==', categoryId))
         
+        
+        getDocs(reffColeccion).then(response=>{ 
+            const products = response.docs.map(doc =>{
+                const datos = doc.data()
+                return {id: doc.id, ...datos}
+            }) 
+            setProducts(products)
+        }).catch(error=>{
+            console.log(error)
+        }).finally(()=> {
+                 setLoading(false)
+            })
+
+
     },[categoryId])
 
      

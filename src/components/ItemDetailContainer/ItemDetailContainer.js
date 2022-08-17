@@ -1,9 +1,10 @@
 import './ItemDetailProduct.css'; 
-import { getProd } from '../../asyncMock';
+//import { getProd } from '../../asyncMock';
 import { useState,useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail'
 import {useParams} from 'react-router-dom';
-
+import { getDoc, doc } from 'firebase/firestore';
+import { dbAccesorios } from '../../services/firebase'; 
 
 const ItemDetailContainer = (addItem) => { 
 
@@ -14,11 +15,22 @@ const ItemDetailContainer = (addItem) => {
 
    
     useEffect(() => {
-        getProd(productId).then(response => {
-            setProduct(response)
+        
+        getDoc(doc(dbAccesorios,'products',productId)).then(response => {
+            const info = response.data()
+            const producto = {id: response.id, ...info}
+            setProduct(producto)
+        }).catch(error =>{
+            console.log(error)
         }).finally(() => {
-            setLoading(false)
-        })
+                 setLoading(false)
+             })
+
+       // getProd(productId).then(response => {
+         //   setProduct(response)
+       // }).finally(() => {
+       //     setLoading(false)
+      //  })
     }, [productId])
 
   
