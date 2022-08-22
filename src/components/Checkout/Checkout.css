@@ -1,0 +1,17 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+input.form__input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 25px;
+    border: 1px solid #6425ad;
+    border-radius: 5px;
+    width: 50%;
+}

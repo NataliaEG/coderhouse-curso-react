@@ -24,3 +24,18 @@ button {
 button:hover { 
     background: #a042df;
 }
+
+.bttCheckout {
+    padding: 5px;
+    margin: 10px;
+    background: #8610d5;
+    border: solid 1px #e1e1e1;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.bttCheckout:hover { 
+    background: #a042df;
+}
