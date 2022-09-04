@@ -11,9 +11,11 @@ const NavBar = () => {
             </div>
             <div className='Menu'>
                 <ul className='pestañas'> 
-                    <li className='opcion'> <Link to='/category/cargadores' > Cargadores </Link></li>
-                    <li className='opcion'> <Link to='/category/auriculares' > Auriculares </Link></li>
-                    <li className='opcion'> <Link to='/category/protectores' > Protectores </Link></li>
+                  
+                  <li className='opcion'> <Link to='/category/cargadores' > Cargadores </Link></li>
+                  <li className='opcion'> <Link to='/category/auriculares' > Auriculares </Link></li>
+                  <li className='opcion'> <Link to='/category/protectores' > Protectores </Link></li>
+                  
                 </ul>
                 
             </div>

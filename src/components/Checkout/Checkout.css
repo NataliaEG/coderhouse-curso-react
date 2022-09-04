@@ -15,3 +15,8 @@ input.form__input {
     border-radius: 5px;
     width: 50%;
 }
+
+.titleIdOrden {
+    color: #765793;
+    font-weight: 600;
+}

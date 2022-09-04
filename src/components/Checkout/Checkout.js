@@ -8,21 +8,22 @@ import './Checkout.css'
 
 const Checkout = () => {
 
-    const {cart, getTotalPrice, getQuantity, clearCart } = useContext(CartContext)
+    const {cart, getTotalPrice, getQuantityCart, deleteCart } = useContext(CartContext)
+    const [IdOrder, setIdOrder] = useState('');
 
-    const quantity = getQuantity()  
+    const quantity = getQuantityCart()  
     const totalPrice = getTotalPrice() 
     const [name, setName] = useState("") 
     const [tel, setTel] = useState(0) 
-   const  [mail, setMail] = useState("") 
+    const  [mail, setMail] = useState("") 
 
 
 
-    //funcion que crea el objeto orden y lo agrega a la coleccion de firestore
+//funcion que crea el objeto orden y lo agrega a la coleccion de firestore
  const generarOrden = async (e) => {  
     try {
-    e.preventDefault();
-    if (datosOk()){
+            e.preventDefault();
+            if (datosOk()){
                     const newOrder ={
                         buyer:{
                             name: name,
@@ -37,7 +38,7 @@ const Checkout = () => {
                     const idsCart = cart.map(prod => prod.id)
                     const prodDb = collection(dbAccesorios,'products')
                     const prodAdd = await getDocs(query(prodDb, where(documentId(),'in', idsCart)))
-
+                    
 
                     const { docs } = prodAdd
                     
@@ -66,43 +67,50 @@ const Checkout = () => {
                         const orderCreada = await addDoc(refOrder, newOrder)
                         batchUpdate.commit()
                         console.log(orderCreada.id) //id de la orden creada
-                        clearCart() 
+                        setIdOrder(orderCreada.id) 
+                        deleteCart() 
                     }else{
                         console.log('hay prodyctos sin stock')
                     } 
 
                 }  
-            }catch (error) {
+        }catch (error) {
                 console.log(error);
-           } 
+        } 
 }
+//fin funcion
 
 
-if(quantity === 0){
+//funcion que avisa al cliente que la orden se genero (el carrito queda en 0 cuando se genera la orden, quantity === 0)
+if(quantity === 0){ 
     return (
-    <div className='CarritoVacio'>
-        <h1 className='titleCarritoVacio'>Orden Generada</h1>
-        <Link className='LinkCarritoVacio' to='/'>Volver al inicio</Link>
-    </div>
+            <div className='CarritoVacio'>
+                <h1 className='titleCarritoVacio'> Orden Generada! </h1>
+                <h3 className='titleIdOrden'> El Id de tu compra es:   {IdOrder}</h3>
+                <Link className='LinkCarritoVacio' to='/'>Volver al inicio</Link>
+            </div>
     )
 }
+//fin funcion
 
 
+//funcion que verifica que los datos ingresados en el checkout son correctos
 const datosOk = () => {
-    if (name.length <= 0) {
-      alert("Debe agregar un nombre")
-      return false;
-    }
-    if (tel.length <= 0 || isNaN(parseInt(tel))) {
-      alert("El telefono no puede contener caracteres")
-      return false;
-    }
-    if (mail.length <= 3 || !String(mail).includes("@")) {
-      alert("El correo electrónico no es valido")
-      return false;
-    }
-    return true;
+        if (name.length <= 0) {
+        alert("Debe agregar un nombre")
+        return false;
+        }
+        if (tel.length <= 0 || isNaN(parseInt(tel))) {
+        alert("Por favor verificar el Telefono")
+        return false;
+        }
+        if (mail.length <= 3 || !String(mail).includes("@")) {
+        alert("El correo electrónico no es valido")
+        return false;
+        }
+        return true;
   }
+//fin funcion
 
 
     return (
@@ -118,5 +126,6 @@ const datosOk = () => {
         </div>
     )
 }
+
 
 export default Checkout

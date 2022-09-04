@@ -9,14 +9,14 @@ const ItemDetail = ({ id, name, category, img, price, stock, description}) => {
 
     const [quantity, setQuantity] = useState(0)
 
-    const { addItem, getProductQuantity } = useContext(CartContext)
+    const { addProd, getQuantityId } = useContext(CartContext)
 
-    const quantityAdded = getProductQuantity(id)
+    const quantityAdded = getQuantityId(id)
 
     const handleOnAdd = (quantity) => {
         console.log('Cantidad de items agregados: ', quantity)
         setQuantity(quantity)
-        addItem({id, name, price, quantity})
+        addProd({id, name, price, quantity})
     }
 
  

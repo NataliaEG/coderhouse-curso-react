@@ -7,10 +7,10 @@ import './CartItems.css';
 
 const CartItems = ({id, name, quantity, price, img, description}) =>{
 
-    const {removeItem} = useContext(CartContext)
+    const {deleteItem} = useContext(CartContext)
 
     const remove = (id) =>{
-        removeItem(id)
+        deleteItem(id)
     }
 
     

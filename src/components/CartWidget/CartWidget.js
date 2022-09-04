@@ -5,9 +5,9 @@ import { CartContext } from '../../context/CartContext'
 
 const CartWidget = () => {
 
-    const { getQuantity } = useContext(CartContext)
+    const { getQuantityCart } = useContext(CartContext)
 
-    const quantity = getQuantity()
+    const quantity = getQuantityCart()
 
     return (
         <Link to='/cart' className="CartWidget" disabled={quantity === 0 ? true : null}> 

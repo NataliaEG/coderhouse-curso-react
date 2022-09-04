@@ -7,9 +7,9 @@ import './Cart.css'
 
 const Cart =  () =>{
 
-    const {cart, getTotalPrice, getQuantity, clearCart } = useContext(CartContext)
+    const {cart, getTotalPrice, getQuantityCart, deleteCart } = useContext(CartContext)
 
-    const quantity = getQuantity();
+    const quantity = getQuantityCart();
     const totalPrice = getTotalPrice();
  
     if(quantity === 0){
@@ -30,7 +30,7 @@ const Cart =  () =>{
                 </div>
                 <div className='cartButtons'>
                     <Link to='/Checkout' className='bttCheckout'>Checkout</Link>
-                    <button onClick={()=>clearCart()}>Vaciar el carrito</button>
+                    <button onClick={()=>deleteCart()}>Vaciar el carrito</button>
                 </div>
             </div>
             

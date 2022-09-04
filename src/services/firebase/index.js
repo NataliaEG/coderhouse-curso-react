@@ -6,12 +6,12 @@ import {getFirestore} from "firebase/firestore"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCMvM5EIzEdaAW3TG6i1LX1NGxVJ5jfVFA",
-  authDomain: "tiendadeaccesorios-84b1a.firebaseapp.com",
-  projectId: "tiendadeaccesorios-84b1a",
-  storageBucket: "tiendadeaccesorios-84b1a.appspot.com",
-  messagingSenderId: "341903776810",
-  appId: "1:341903776810:web:9bd53fd34fa19fea0a3753"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_authDomain,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase
