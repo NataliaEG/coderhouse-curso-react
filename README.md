@@ -1,6 +1,6 @@
-Este proyecto corresponde a un ecommerce de accesorios de celulares, donde se brinda por ejemplo auriculares, cargadores, fundas entre otras cosas.
+# Proyecto final del curdo de React Js en CoderHouse   
 
-# Proyecto final del curdo de React Js en CoderHouse  (Underline)
+Este proyecto corresponde a un ecommerce de accesorios de celulares, donde se brinda por ejemplo auriculares, cargadores, fundas entre otras cosas.
 
 ## Tienda E-Commerce para tienda de accesorios AppCell
 
@@ -14,7 +14,7 @@ La aplicacion permite por ejemplo:
 - Generar una orden de compra
 
 
-##Ejecucion del proyecto
+## Ejecucion del proyecto
 
 Clonar el repositorio a tu carpeta local
 
@@ -32,7 +32,7 @@ Iniciar el servidor en el navegador
 
 `$ npm start`
 
-##Componentes del proyecto
+## Componentes del proyecto
 
 + **NavBar**: que permite la navegacion entre las categorias de los productos, ingresar al carrito y volver al inicio de la aplicación.
 
@@ -47,6 +47,6 @@ Iniciar el servidor en el navegador
 + **Checkout**: es el componente encargado de generar la orden de compra con los datos del carrito y del cliente, enviando los datos a firebase y devolviendo su  Id.
 
 
-##Demostración del proyecto
+## Demostración del proyecto
 
 ![Gif del funcionamiento de la tienda](https://github.com/NataliaEG/tiendadeaccesorios-nataliagomez/blob/routing-ecommerce/TiendaEcommerceAppCell.gif)
