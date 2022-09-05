@@ -49,4 +49,4 @@ Iniciar el servidor en el navegador
 
 ## Demostración del proyecto
 
-![Gif del funcionamiento de la tienda](https://github.com/NataliaEG/tiendadeaccesorios-nataliagomez/blob/routing-ecommerce/tienda-accesorios.gif)
+![Gif del funcionamiento de la tienda](https://github.com/NataliaEG/tiendadeaccesorios-nataliagomez/blob/ProyectoFinal/tienda-accesorios.gif)
